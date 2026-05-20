@@ -48,7 +48,7 @@ export function Contact() {
         {/* Right side - Form */}
         <div className="bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 p-8 neon-border">
           <form
-            action="https://formsubmit.co/YOUR_EMAIL@example.com"
+            action="https://formsubmit.co/bbok.englishclass@gmail.com"
             method="POST"
             className="space-y-5"
           >
