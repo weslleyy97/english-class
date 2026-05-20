@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <defs>
+    <linearGradient id="photo-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899"/>
+      <stop offset="50%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fde68a"/>
+      <stop offset="100%" style="stop-color:#f5d0a9"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="500" height="500" fill="url(#photo-bg)"/>
+  <!-- Sparkles -->
+  <circle cx="80" cy="80" r="4" fill="#fff" opacity="0.8"/>
+  <circle cx="420" cy="60" r="3" fill="#fff" opacity="0.7"/>
+  <circle cx="50" cy="350" r="3" fill="#fff" opacity="0.6"/>
+  <circle cx="450" cy="300" r="4" fill="#fff" opacity="0.7"/>
+  <circle cx="380" cy="420" r="3" fill="#fff" opacity="0.5"/>
+  <!-- Star shapes -->
+  <text x="60" y="200" font-size="20" opacity="0.6">✦</text>
+  <text x="430" y="180" font-size="16" opacity="0.5">✦</text>
+  <text x="100" y="440" font-size="14" opacity="0.5">✦</text>
+  <!-- Person silhouette - REPLACE THIS WITH YOUR ACTUAL PHOTO -->
+  <!-- Just save your photo as /public/images/teacher.jpg and update the About component -->
+  <ellipse cx="250" cy="420" rx="110" ry="140" fill="#7c3aed" opacity="0.8"/>
+  <!-- Head -->
+  <circle cx="250" cy="200" r="75" fill="url(#skin)"/>
+  <!-- Hair -->
+  <path d="M175 180 Q180 120 250 110 Q320 120 325 180 L320 210 Q310 170 250 165 Q190 170 180 210 Z" fill="#1e293b"/>
+  <path d="M175 180 L170 250 Q172 220 180 200 Z" fill="#1e293b"/>
+  <path d="M325 180 L330 250 Q328 220 320 200 Z" fill="#1e293b"/>
+  <!-- Face -->
+  <circle cx="225" cy="200" r="6" fill="#1e293b"/>
+  <circle cx="275" cy="200" r="6" fill="#1e293b"/>
+  <circle cx="223" cy="197" r="2" fill="#fff"/>
+  <circle cx="273" cy="197" r="2" fill="#fff"/>
+  <!-- Eyebrows -->
+  <path d="M212 185 Q225 180 238 185" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M262 185 Q275 180 288 185" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Smile -->
+  <path d="M230 230 Q250 250 270 230" stroke="#1e293b" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <!-- Blush -->
+  <ellipse cx="215" cy="225" rx="12" ry="8" fill="#fda4af" opacity="0.5"/>
+  <ellipse cx="285" cy="225" rx="12" ry="8" fill="#fda4af" opacity="0.5"/>
+  <!-- Body/Shirt -->
+  <path d="M180 300 Q180 280 200 270 Q250 255 300 270 Q320 280 320 300 L340 450 Q250 470 160 450 Z" fill="#fff"/>
+  <!-- Collar detail -->
+  <path d="M230 270 L250 295 L270 270" stroke="#e2e8f0" stroke-width="2" fill="none"/>
+  <!-- Text overlay -->
+  <rect x="140" y="400" width="220" height="50" rx="25" fill="#fff" opacity="0.9"/>
+  <text x="175" y="432" font-family="sans-serif" font-size="18" font-weight="bold" fill="#7c3aed">YOUR PHOTO HERE</text>
+</svg>
