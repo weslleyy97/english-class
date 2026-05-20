@@ -1,4 +1,13 @@
+"use client";
+
+import { useTranslation } from "./TranslationProvider";
+
+const benefitIcons = ["📧", "🎥", "⏱️"];
+const benefitColors = ["pink", "purple", "cyan"];
+
 export function Contact() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="py-24 px-6 relative overflow-hidden bg-[#0f0518]">
       {/* Background glows */}
@@ -9,35 +18,30 @@ export function Contact() {
         {/* Left side - Info */}
         <div>
           <span className="text-pink-400 font-bold text-sm uppercase tracking-widest">
-            ♡ Get Started
+            {t.contact.label}
           </span>
           <h2 className="text-4xl font-black text-white mt-3 mb-4 leading-tight">
-            Ready to
-            <span className="bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent"> Level Up?</span>
+            {t.contact.title}
+            <span className="bg-gradient-to-r from-pink-400 to-cyan-400 bg-clip-text text-transparent">{t.contact.titleHighlight}</span>
           </h2>
 
           <div className="inline-block mb-6 px-6 py-3 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white rounded-full text-lg font-bold shadow-xl shadow-pink-500/20 animate-pulse-glow">
-            ✨ First class = FREE ✨
+            {t.contact.badge}
           </div>
 
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-            Fill out the form and I&apos;ll reach out within 24h to schedule your
-            free trial. Zero pressure, all good vibes.
+            {t.contact.description}
           </p>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-pink-500/10 border border-pink-500/20 rounded-xl flex items-center justify-center text-xl">📧</div>
-              <span className="text-gray-300">Reply within 24 hours</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-purple-500/10 border border-purple-500/20 rounded-xl flex items-center justify-center text-xl">🎥</div>
-              <span className="text-gray-300">Online via Zoom / Google Meet</span>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-cyan-500/10 border border-cyan-500/20 rounded-xl flex items-center justify-center text-xl">⏱️</div>
-              <span className="text-gray-300">50-minute trial session</span>
-            </div>
+            {t.contact.benefits.map((benefit, i) => (
+              <div key={i} className="flex items-center gap-4">
+                <div className={`w-12 h-12 bg-${benefitColors[i]}-500/10 border border-${benefitColors[i]}-500/20 rounded-xl flex items-center justify-center text-xl`}>
+                  {benefitIcons[i]}
+                </div>
+                <span className="text-gray-300">{benefit}</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -48,55 +52,54 @@ export function Contact() {
             method="POST"
             className="space-y-5"
           >
-            {/* Replace YOUR_EMAIL@example.com above with your actual email */}
             <input type="hidden" name="_subject" value="New Student Interest - Free Trial Class" />
             <input type="hidden" name="_captcha" value="true" />
             <input type="hidden" name="_template" value="table" />
 
             <div>
               <label htmlFor="name" className="block mb-1.5 font-semibold text-gray-200 text-sm">
-                Name
+                {t.contact.form.name}
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
-                placeholder="Your full name"
+                placeholder={t.contact.form.namePlaceholder}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
               />
             </div>
 
             <div>
               <label htmlFor="email" className="block mb-1.5 font-semibold text-gray-200 text-sm">
-                Email
+                {t.contact.form.email}
               </label>
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                placeholder="your@email.com"
+                placeholder={t.contact.form.emailPlaceholder}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
               />
             </div>
 
             <div>
               <label htmlFor="phone" className="block mb-1.5 font-semibold text-gray-200 text-sm">
-                Phone / WhatsApp
+                {t.contact.form.phone}
               </label>
               <input
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="Your phone number"
+                placeholder={t.contact.form.phonePlaceholder}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
               />
             </div>
 
             <div>
               <label htmlFor="level" className="block mb-1.5 font-semibold text-gray-200 text-sm">
-                Current English Level
+                {t.contact.form.level}
               </label>
               <select
                 id="level"
@@ -105,23 +108,24 @@ export function Contact() {
                 defaultValue=""
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all"
               >
-                <option value="" disabled className="bg-gray-900">Select your level</option>
-                <option value="beginner" className="bg-gray-900">Beginner - I know very little</option>
-                <option value="elementary" className="bg-gray-900">Elementary - I know the basics</option>
-                <option value="intermediate" className="bg-gray-900">Intermediate - I can hold a conversation</option>
-                <option value="advanced" className="bg-gray-900">Advanced - I want to refine my skills</option>
+                <option value="" disabled className="bg-gray-900">{t.contact.form.levelPlaceholder}</option>
+                {t.contact.form.levels.map((level, i) => (
+                  <option key={i} value={["beginner", "elementary", "intermediate", "advanced"][i]} className="bg-gray-900">
+                    {level}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div>
               <label htmlFor="goals" className="block mb-1.5 font-semibold text-gray-200 text-sm">
-                What are your goals?
+                {t.contact.form.goals}
               </label>
               <textarea
                 id="goals"
                 name="goals"
                 rows={3}
-                placeholder="e.g., I need English for work, travel, K-dramas..."
+                placeholder={t.contact.form.goalsPlaceholder}
                 className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-pink-500 focus:border-transparent transition-all resize-none"
               />
             </div>
@@ -130,7 +134,7 @@ export function Contact() {
               type="submit"
               className="w-full py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white font-bold rounded-xl text-lg hover:shadow-xl hover:shadow-pink-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
-              Get My Free Class ★
+              {t.contact.form.submit}
             </button>
           </form>
         </div>

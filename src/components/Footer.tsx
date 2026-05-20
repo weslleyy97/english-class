@@ -1,4 +1,10 @@
+"use client";
+
+import { useTranslation } from "./TranslationProvider";
+
 export function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="bg-black/50 backdrop-blur-sm border-t border-white/5 py-12 px-6">
       <div className="max-w-6xl mx-auto text-center">
@@ -6,7 +12,7 @@ export function Footer() {
           ✦ English Classes
         </div>
         <p className="mb-6 text-gray-500">
-          Helping students shine, one lesson at a time. ♡
+          {t.footer.tagline}
         </p>
         <div className="border-t border-white/5 pt-6">
           <p className="text-sm text-gray-600">
