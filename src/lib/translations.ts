@@ -88,7 +88,7 @@ export const translations = {
         goals: "Quais seus objetivos?",
         goalsPlaceholder:
           "ex: Preciso de inglês pro trabalho, viagem, séries...",
-        submit: "Quero Minha Aula Grátis ★",
+        submit: "Chamar no WhatsApp ★",
       },
     },
     footer: {
@@ -184,7 +184,7 @@ export const translations = {
         goals: "What are your goals?",
         goalsPlaceholder:
           "e.g., I need English for work, travel, K-dramas...",
-        submit: "Get My Free Class ★",
+        submit: "Message on WhatsApp ★",
       },
     },
     footer: {

@@ -6,7 +6,7 @@ export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0f0518]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0f0518] pt-16">
       {/* Animated gradient background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-pink-600/30 rounded-full blur-[120px] animate-pulse-glow" />
@@ -43,16 +43,16 @@ export function Hero() {
         <p className="text-lg md:text-xl text-gray-300 mb-12 max-w-xl mx-auto animate-fade-in-up">
           {t.hero.subtitle}
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up px-4">
           <a
             href="#contact"
-            className="px-10 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white font-bold rounded-full text-lg hover:scale-110 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300"
+            className="px-8 py-3 md:px-10 md:py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 text-white font-bold rounded-full text-base md:text-lg hover:scale-110 hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 text-center"
           >
             {t.hero.cta}
           </a>
           <a
             href="#about"
-            className="px-10 py-4 border-2 border-purple-400/40 text-purple-300 font-semibold rounded-full text-lg hover:bg-purple-500/10 hover:border-purple-400 backdrop-blur-sm transition-all duration-300"
+            className="px-8 py-3 md:px-10 md:py-4 border-2 border-purple-400/40 text-purple-300 font-semibold rounded-full text-base md:text-lg hover:bg-purple-500/10 hover:border-purple-400 backdrop-blur-sm transition-all duration-300 text-center"
           >
             {t.hero.learnMore}
           </a>
