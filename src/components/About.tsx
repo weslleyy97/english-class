@@ -13,11 +13,11 @@ export function About() {
             {/* Photo frame */}
             <div className="relative rounded-3xl overflow-hidden border-2 border-pink-500/30 neon-border">
               {/* 
-                REPLACE: swap /images/teacher.svg with your own photo
-                e.g. /images/teacher.jpg — just drop it in public/images/ 
+                REPLACE: swap the image path with your own photo
+                e.g. /english-class/images/teacher.jpg — just drop it in public/images/ 
               */}
               <img
-                src="/images/teacher.svg"
+                src="/english-class/images/teacher.svg"
                 alt="English teacher"
                 className="w-[350px] h-[400px] object-cover"
               />
